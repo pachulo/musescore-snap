@@ -7,12 +7,22 @@ description: |
     It is free to install on Windows, Mac, and Linux.
 
 grade: devel
-confinement: devmode
+confinement: strict
 
 apps:
     mscore:
         command: desktop-launch mscore
-        plugs: [x11, opengl, unity7, home, pulseaudio]
+        plugs:
+          - gsettings
+          - home
+          - network
+          - network-bind
+          - network-manager
+          - pulseaudio
+          - unity7
+          - x11
+          - opengl
+          - cups-control
 
 parts:
     musescore:
@@ -58,4 +68,9 @@ parts:
             - libqt5svg5
             - libqt5printsupport5
             - libqt5webkit5
+            - libcanberra-gtk-module
+            - overlay-scrollbar-gtk2
+            - unity-gtk2-module
+            - libatk-adaptor
+            - libgail-common
         after: [desktop-qt5]
