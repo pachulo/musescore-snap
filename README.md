@@ -10,7 +10,7 @@ Install with:
 
 Some snap interfaces need to be connected manually:
 
-    sudo snap connect musescore:network-bind
+    sudo snap connect musescore:network-manager
     sudo snap connect musescore:cups-control
 
 But the application can work wihout them.
