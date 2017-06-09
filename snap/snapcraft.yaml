@@ -6,6 +6,13 @@ description: |
     music, with a user-friendly interface and immensely powerful features.
     It is free to install on Windows, Mac, and Linux.
 
+    Some interfaces need to be connected manually:
+
+        $ sudo snap connect musescore:cups-control
+        $ sudo snap connect musescore:network-manager
+
+    But most of the application functionality works without them.
+
 grade: devel
 confinement: strict
 
@@ -32,7 +39,7 @@ parts:
         plugin: make
         build-packages:
             - extra-cmake-modules
-              #- doxygen
+            - doxygen
             - portaudio19-dev
             - libasound2-dev
             - libmp3lame-dev
