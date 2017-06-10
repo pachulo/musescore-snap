@@ -37,6 +37,8 @@ parts:
         source-tag: "v2.1.0"
         source-type: git
         plugin: make
+        prepare: |
+            make revision
         build-packages:
             - extra-cmake-modules
             - doxygen
