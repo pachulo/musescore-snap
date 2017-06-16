@@ -10,6 +10,7 @@ description: |
 
         $ sudo snap connect musescore:cups-control
         $ sudo snap connect musescore:network-manager
+        $ sudo snap connect musescore:alsa
 
     But most of the application functionality works without them.
 
@@ -30,6 +31,7 @@ apps:
           - x11
           - opengl
           - cups-control
+          - alsa
 
 parts:
     musescore:
