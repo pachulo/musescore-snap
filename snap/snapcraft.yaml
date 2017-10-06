@@ -14,7 +14,7 @@ description: |
 
     But most of the application functionality works without them.
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
