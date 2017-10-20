@@ -84,4 +84,5 @@ parts:
             - unity-gtk2-module
             - libatk-adaptor
             - libgail-common
+            - libmp3lame0
         after: [desktop-qt5]
