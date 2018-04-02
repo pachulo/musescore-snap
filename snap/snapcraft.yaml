@@ -86,7 +86,7 @@ parts:
             - libatk-adaptor
             - libgail-common
             - libmp3lame0
-            - libportmidi
+            - libportmidi0
             - libvorbis0a
             - libsndfile1
             - libportaudio2
