@@ -1,5 +1,5 @@
 name: musescore
-version: '2.1.0'
+version: '2.2.0'
 summary: Create, play and print beautiful sheet music.
 description: |
     MuseScore is the world's leading free and open-source software for writing
@@ -36,7 +36,7 @@ apps:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v2.1.0"
+        source-tag: "v2.2"
         source-type: git
         plugin: make
         prepare: |
@@ -65,6 +65,7 @@ parts:
             - libqt5svg5-dev
             - libqt5webkit5-dev
             - libqt5opengl5-dev
+            - libportmidi-dev
             - cmake
             - g++
         make-parameters:
@@ -85,4 +86,12 @@ parts:
             - libatk-adaptor
             - libgail-common
             - libmp3lame0
+            - libportmidi
+            - libvorbis0a
+            - libsndfile1
+            - libportaudio2
+            - libpulse0
+            - libjack0
+            - libasyncns0
+            - libflac8
         after: [desktop-qt5]
