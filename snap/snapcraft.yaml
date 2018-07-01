@@ -1,5 +1,5 @@
 name: musescore
-version: '2.2.1'
+version: '2.3.0'
 summary: Create, play and print beautiful sheet music.
 description: |
     MuseScore is the world's leading free and open-source software for writing
@@ -37,7 +37,7 @@ apps:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v2.2.1"
+        source-tag: "v2.3"
         source-type: git
         plugin: make
         prepare: |
