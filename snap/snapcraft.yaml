@@ -1,5 +1,5 @@
 name: musescore
-version: '2.3.1'
+version: '2.3.2'
 summary: Create, play and print beautiful sheet music.
 description: |
     MuseScore is the world's leading free and open-source software for writing
@@ -33,11 +33,13 @@ apps:
           - cups-control
           - alsa
           - desktop
+          - wayland
+          - desktop-legacy
 
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v2.3.1"
+        source-tag: "v2.3.2"
         source-type: git
         plugin: make
         prepare: |
