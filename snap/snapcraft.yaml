@@ -97,4 +97,5 @@ parts:
             - libjack0
             - libasyncns0
             - libflac8
+            - qtwayland5
         after: [desktop-qt5]
