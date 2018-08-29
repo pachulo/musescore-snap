@@ -20,6 +20,9 @@ confinement: strict
 apps:
     mscore:
         command: desktop-launch mscore
+        # Make this the default till Qt apps in wayland look & work better
+        environment:
+            DISABLE_WAYLAND: 1
         plugs:
           - gsettings
           - home
