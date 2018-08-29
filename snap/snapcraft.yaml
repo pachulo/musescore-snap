@@ -16,6 +16,7 @@ description: |
 
 grade: stable
 confinement: strict
+base: core18
 
 apps:
     mscore:
@@ -65,7 +66,7 @@ parts:
             - qtbase5-dev
             - qttools5-dev
             - qttools5-dev-tools
-            - qtquick1-5-dev
+              #- qtquick1-5-dev
             - qtscript5-dev
             - libqt5xmlpatterns5-dev
             - libqt5svg5-dev
