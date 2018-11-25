@@ -38,6 +38,7 @@ apps:
           - desktop
           - wayland
           - desktop-legacy
+          - removable-media
 
 parts:
     musescore:
