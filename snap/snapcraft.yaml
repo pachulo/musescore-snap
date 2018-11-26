@@ -11,6 +11,7 @@ description: |
         $ sudo snap connect musescore:cups-control
         $ sudo snap connect musescore:network-manager
         $ sudo snap connect musescore:alsa
+        $ sudo snap connect musescore:removable-media
 
     But most of the application functionality works without them.
 
