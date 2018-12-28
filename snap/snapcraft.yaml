@@ -75,6 +75,7 @@ parts:
             - libportmidi-dev
             - cmake
             - g++
+            - qtwebengine5-dev
         make-parameters:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
