@@ -76,6 +76,7 @@ parts:
             - cmake
             - g++
             - qtwebengine5-dev
+            - libqt5webenginecore5
         make-parameters:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
