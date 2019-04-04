@@ -43,7 +43,7 @@ apps:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v3.0.2"
+        source-tag: "v3.0.5"
         source-type: git
         plugin: make
         prepare: |
