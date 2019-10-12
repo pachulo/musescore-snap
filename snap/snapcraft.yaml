@@ -9,7 +9,6 @@ description: |
     Some interfaces need to be connected manually:
 
         $ sudo snap connect musescore:cups-control
-        $ sudo snap connect musescore:network-manager
         $ sudo snap connect musescore:alsa
 
     But most of the application functionality works without them.
@@ -103,23 +102,19 @@ parts:
             - libdrm-dev
             - libgl1-mesa-dev
             - libegl1-mesa-dev
-            #- libqt4-dev
-            #- qt5-qmake
             # QT
             - qtbase5-dev
             - qttools5-dev
             - qttools5-dev-tools
-            #- qtquick1-5-dev
             - qtwebengine5-dev
             - qtscript5-dev
             - libqt5xmlpatterns5-dev
             - libqt5svg5-dev
             - libqt5webkit5-dev
-            #- libqt5opengl5-dev
-            #- libqt5webenginecore5
         make-parameters:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
+            # TODO: This shouldn't be necessary
             - BUILD_WEBENGINE=off
         stage-packages:
             - libqt5core5a
@@ -149,7 +144,6 @@ parts:
             - libqt5sql5
         after: [desktop-qt5]
 
-
   # Part for supporting various desktop technologies
   # Refer: https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml
     desktop-qt5:
@@ -174,3 +168,8 @@ parts:
             - libqt5svg5 # for loading icon themes which are svg
             - try: [appmenu-qt5] # not available on core18
             - locales-all
+
+    qt5-gtk-platform:
+        plugin: nil
+        stage-packages:
+            - qt5-gtk-platformtheme
