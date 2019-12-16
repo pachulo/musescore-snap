@@ -1,5 +1,5 @@
 name: musescore
-version: '3.2.3'
+version: '3.3.4'
 summary: Create, play and print beautiful sheet music.
 description: |
     MuseScore is the world's leading free and open-source software for writing
@@ -48,6 +48,7 @@ apps:
             #- network-bind
             #- network-manager
           - pulseaudio
+          - audio-playback
           - unity7
           - x11
           - opengl
@@ -75,7 +76,7 @@ plugs:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v3.2.3"
+        source-tag: "v3.3.4"
         source-type: git
         plugin: make
         override-build: |
@@ -115,6 +116,7 @@ parts:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
             # TODO: This shouldn't be necessary
+            # https://musescore.org/en/comment/884393
             - BUILD_WEBENGINE=off
         stage-packages:
             - libqt5core5a
