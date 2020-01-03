@@ -144,6 +144,9 @@ parts:
             - qtwayland5
             - libqt5help5
             - libqt5sql5
+            # Palettes need this, see:
+            # https://forum.snapcraft.io/t/missing-dependency-for-musescore/14884
+            - qt5-graphicaleffects
         after: [desktop-qt5]
 
   # Part for supporting various desktop technologies
