@@ -147,7 +147,7 @@ parts:
             # Palettes need these, see:
             # https://forum.snapcraft.io/t/missing-dependency-for-musescore/14884
             - qml-module-qtgraphicaleffects
-            - qml-module-qtquick-controls
+            - qml-module-qtquick-controls2
         after: [desktop-qt5]
 
   # Part for supporting various desktop technologies
