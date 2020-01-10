@@ -112,6 +112,7 @@ parts:
             - libqt5xmlpatterns5-dev
             - libqt5svg5-dev
             - libqt5webkit5-dev
+            - qtquickcontrols2-5-dev
         make-parameters:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
@@ -148,6 +149,7 @@ parts:
             # https://forum.snapcraft.io/t/missing-dependency-for-musescore/14884
             - qml-module-qtgraphicaleffects
             - qml-module-qtquick-controls2
+            - qml-module-qtqml-models2
         after: [desktop-qt5]
 
   # Part for supporting various desktop technologies
