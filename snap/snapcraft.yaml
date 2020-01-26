@@ -1,5 +1,6 @@
 name: musescore
-version: '3.3.4'
+#version: '3.3.4'
+adopt-info: musescore
 summary: Create, play and print beautiful sheet music.
 description: |
     MuseScore is the world's leading free and open-source software for writing
@@ -76,12 +77,18 @@ plugs:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore
-        source-tag: "v3.3.4"
+        #source-tag: "v3.3.4"
         source-type: git
         plugin: make
         override-build: |
             make revision
             QT_SELECT=qt5 snapcraftctl build
+        override-pull: |
+            snapcraftctl pull
+           "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
+                        --release-tag-prefix='v' \
+                        --stable-tag-pattern=[[:digit:]]+$ \
+                        --force-stable
         build-packages:
             #- extra-cmake-modules
             #- doxygen
