@@ -191,3 +191,14 @@ parts:
         plugin: nil
         stage-packages:
             - qt5-gtk-platformtheme
+
+    # Check out the tagged release revision if it isn't promoted to the stable channel
+    # https://forum.snapcraft.io/t/selective-checkout-check-out-the-tagged-release-revision-if-it-isnt-promoted-to-the-stable-channel/10617
+    selective-checkout:
+        plugin: nil
+        build-packages:
+          - git
+        stage-snaps:
+          - selective-checkout
+        prime:
+          - -*
