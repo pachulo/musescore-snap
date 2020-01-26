@@ -157,7 +157,7 @@ parts:
             - qml-module-qtgraphicaleffects
             - qml-module-qtquick-controls2
             - qml-module-qtqml-models2
-        after: [desktop-qt5]
+        after: [desktop-qt5, selective-checkout]
 
   # Part for supporting various desktop technologies
   # Refer: https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml
