@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.1
-Name=MuseScore 2.3.2
+Name=MuseScore
 GenericName=Music notation
 GenericName[de]=Notensatz
 GenericName[fr]=Notation musicale
@@ -14,3 +14,4 @@ Terminal=false
 Type=Application
 Categories=Qt;Audio;Sequencer;Midi;AudioVideoEditing;Music;AudioVideo;
 MimeType=application/x-musescore;application/x-musescore+xml;application/vnd.recordare.musicxml;application/vnd.recordare.musicxml+xml;
+
