@@ -71,7 +71,7 @@ parts:
             snapcraftctl pull
             "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
                         --release-tag-prefix='v' \
-                        --stable-tag-pattern=[[:digit:]]+$ \
+                        --stable-tag-pattern="^([[:digit:]]\.){1,2}[[:digit:]]$" \
                         --force-stable
         build-packages:
             #- extra-cmake-modules
