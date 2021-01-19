@@ -96,6 +96,7 @@ parts:
             - libegl1-mesa-dev
             # QT
             - qtbase5-dev
+            - qt5-default
             - qttools5-dev
             - qttools5-dev-tools
             - qtwebengine5-dev
