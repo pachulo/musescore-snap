@@ -167,6 +167,7 @@ parts:
             - fcitx-frontend-qt5
             - gnome-themes-standard
             - libgdk-pixbuf2.0-0
+            - libgtk2.0-0
             - libqt5gui5
             - libqt5svg5 # for loading icon themes which are svg
             - libxkbcommon0
