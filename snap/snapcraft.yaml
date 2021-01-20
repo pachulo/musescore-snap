@@ -29,20 +29,20 @@ apps:
             DISABLE_WAYLAND: 1
             QT_QPA_PLATFORMTHEME: gtk3
         plugs:
+          - alsa
+          - audio-playback
+          - cups-control
+          - desktop
+          - desktop-legacy
           - gsettings
           - home
           - network
-          - pulseaudio
-          - audio-playback
-          - unity7
-          - x11
           - opengl
-          - cups-control
-          - alsa
-          - desktop
-          - wayland
-          - desktop-legacy
+          - pulseaudio
           - removable-media
+          - unity7
+          - wayland
+          - x11
 
 plugs:
   # gtk-common-themes support
@@ -82,29 +82,29 @@ parts:
             - g++
             # Audio & others
             - libasound2-dev
-            - portaudio19-dev
-            - libmp3lame-dev
-            - libsndfile1-dev
-            - libportmidi-dev
-            - libssl-dev
-            - libpulse-dev
-            - libfreetype6-dev
             - libfreetype6
+            - libfreetype6-dev
+            - libmp3lame-dev
+            - libportmidi-dev
+            - libpulse-dev
+            - libsndfile1-dev
+            - libssl-dev
+            - portaudio19-dev
             # «Failed to find "GL" in "".»
             - libdrm-dev
-            - libgl1-mesa-dev
             - libegl1-mesa-dev
+            - libgl1-mesa-dev
             # QT
-            - qtbase5-dev
+            - libqt5svg5-dev
+            - libqt5webkit5-dev
+            - libqt5xmlpatterns5-dev
             - qt5-default
+            - qtbase5-dev
+            - qtquickcontrols2-5-dev
+            - qtscript5-dev
             - qttools5-dev
             - qttools5-dev-tools
             - qtwebengine5-dev
-            - qtscript5-dev
-            - libqt5xmlpatterns5-dev
-            - libqt5svg5-dev
-            - libqt5webkit5-dev
-            - qtquickcontrols2-5-dev
         make-parameters:
             - PREFIX=/usr
             - UPDATE_CACHE=FALSE
@@ -112,31 +112,31 @@ parts:
             # https://musescore.org/en/comment/884393
             - BUILD_WEBENGINE=off
         stage-packages:
+            - libasyncns0
+            - libatk-adaptor
+            - libcanberra-gtk-module
+            - libflac8
+            - libgail-common
+            - libjack0
+            - libmp3lame0
+            - libportaudio2
+            - libportmidi0
+            - libpulse0
             - libqt5core5a
             - libqt5gui5
+            - libqt5help5
             - libqt5network5
+            - libqt5printsupport5
+            - libqt5sql5
+            - libqt5svg5
+            - libqt5webkit5
             - libqt5xml5
             - libqt5xmlpatterns5
-            - libqt5svg5
-            - libqt5printsupport5
-            - libqt5webkit5
-            - libcanberra-gtk-module
-            - overlay-scrollbar-gtk2
-            - unity-gtk2-module
-            - libatk-adaptor
-            - libgail-common
-            - libmp3lame0
-            - libportmidi0
-            - libvorbis0a
             - libsndfile1
-            - libportaudio2
-            - libpulse0
-            - libjack0
-            - libasyncns0
-            - libflac8
+            - libvorbis0a
+            - overlay-scrollbar-gtk2
             - qtwayland5
-            - libqt5help5
-            - libqt5sql5
+            - unity-gtk2-module
             # Palettes need these, see:
             # https://forum.snapcraft.io/t/missing-dependency-for-musescore/14884
             - qml-module-qtgraphicaleffects
@@ -159,23 +159,23 @@ parts:
         make-parameters: ["FLAVOR=qt5"]
         build-packages:
             - build-essential
-            - qtbase5-dev
             - dpkg-dev
+            - qtbase5-dev
         stage-packages:
-            - libxkbcommon0
-            - ttf-ubuntu-font-family
-            - dmz-cursor-theme
-            - light-themes
             - adwaita-icon-theme
-            - gnome-themes-standard
-            - shared-mime-info
-            - libqt5gui5
-            - libgdk-pixbuf2.0-0
-            - libqt5svg5 # for loading icon themes which are svg
-            - try: [appmenu-qt5] # not available on core18
-            - locales-all
-            - xdg-user-dirs
+            - dmz-cursor-theme
             - fcitx-frontend-qt5
+            - gnome-themes-standard
+            - libgdk-pixbuf2.0-0
+            - libqt5gui5
+            - libqt5svg5 # for loading icon themes which are svg
+            - libxkbcommon0
+            - light-themes
+            - locales-all
+            - shared-mime-info
+            - try: [appmenu-qt5] # not available on core18
+            - ttf-ubuntu-font-family
+            - xdg-user-dirs
 
     qt5-gtk-platform:
         plugin: nil
