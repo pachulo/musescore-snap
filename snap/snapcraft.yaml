@@ -65,7 +65,7 @@ parts:
         #source-type: git
         plugin: cmake
         configflags:
-            - "-P build.cmake"
+        #    - "-P build.cmake"
             - "-DCMAKE_BUILD_TYPE=Release"
         #override-build: |
         #    make revision
