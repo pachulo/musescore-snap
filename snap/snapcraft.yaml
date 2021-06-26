@@ -66,10 +66,11 @@ parts:
         plugin: cmake
         configflags:
         #    - "-P build.cmake"
-            - "-DCMAKE_BUILD_TYPE=Release"
-        #override-build: |
-        #    make revision
-        #    QT_SELECT=qt5 snapcraftctl build
+            - -DCMAKE_BUILD_TYPE=Release
+            - -DCMAKE_INSTALL_PREFIX=/usr
+        override-build: |
+            cmake -P build.cmake
+            QT_SELECT=qt5 snapcraftctl build
         override-pull: |
             snapcraftctl pull
             "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
@@ -108,12 +109,12 @@ parts:
             - qttools5-dev
             - qttools5-dev-tools
             - qtwebengine5-dev
-        make-parameters:
-            - PREFIX=/usr
-            - UPDATE_CACHE=FALSE
+        #make-parameters:
+            #- PREFIX=/usr
+            #- UPDATE_CACHE=FALSE
             # TODO: This shouldn't be necessary
             # https://musescore.org/en/comment/884393
-            - BUILD_WEBENGINE=off
+            #- BUILD_WEBENGINE=off
         stage-packages:
             - libasyncns0
             - libatk-adaptor
