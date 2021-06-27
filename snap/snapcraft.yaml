@@ -62,15 +62,14 @@ plugs:
 parts:
     musescore:
         source: https://github.com/musescore/MuseScore.git
-        #source-type: git
         plugin: cmake
-        configflags:
-        #    - "-P build.cmake"
-            - -DCMAKE_BUILD_TYPE=Release
-            - -DCMAKE_INSTALL_PREFIX=/usr
+        #configflags:
+            #- "-P build.cmake"
+            #- -DCMAKE_BUILD_TYPE=Release
+            #- -DCMAKE_INSTALL_PREFIX=/usr
         override-build: |
-            cmake -P build.cmake
-            QT_SELECT=qt5 snapcraftctl build
+            cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+            #QT_SELECT=qt5 snapcraftctl build
         override-pull: |
             snapcraftctl pull
             "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
