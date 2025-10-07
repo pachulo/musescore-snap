@@ -7,7 +7,6 @@ description: |
 
     Some interfaces need to be connected manually:
 
-        $ sudo snap connect musescore:cups-control
         $ sudo snap connect musescore:alsa
         $ sudo snap connect musescore:removable-media
 
@@ -16,6 +15,8 @@ description: |
 grade: stable
 confinement: strict
 base: core24
+assumes:
+  - snapd2.55 # >=2.55 needed for the cups interface
 version: '4.6.0'
 platforms:
   amd64:
@@ -33,11 +34,20 @@ apps:
     extensions: [kde-neon-6]
     plugs:
       - alsa
-      - cups-control
+      - cups
       - gsettings
       - home
       - pulseaudio
       - removable-media
+
+plugs:
+  # This is not used or needed for anything other than to trigger automatic
+  # installation of the cups snap via "default-provider: cups"
+  foo-install-cups:
+    interface: content
+    content: foo
+    default-provider: cups
+    target: $SNAP_DATA/foo
 
 parts:
   musescore:
