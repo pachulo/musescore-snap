@@ -70,6 +70,7 @@ parts:
       - zlib1g-dev
       - libxkbcommon-dev
       - libduktape207
+      - libportmidi-dev
     override-build: |
       craftctl default
       sed -i 's|Icon=mscore|Icon=${SNAP}/usr/share/icons/hicolor/512x512/apps/mscore.png|' $CRAFT_PART_INSTALL/usr/share/applications/org.musescore.MuseScore.desktop
@@ -80,3 +81,22 @@ parts:
     stage-packages:
       - libasound2t64
       - libasound2-plugins
+      - libportmidi0
+
+  cleanup:
+    after: [dependencies]
+    plugin: nil
+    build-snaps:
+      - mesa-2404
+      - kf6-core24
+    override-prime: |
+      set -eux
+      cd /snap/mesa-2404/current/usr/lib
+      find . -type f,l -exec rm -f $CRAFT_PRIME/usr/lib/{} \;
+      cd /snap/mesa-2404/current/usr/share
+      find . -type f,l -exec rm -f $CRAFT_PRIME/usr/share/{} \;
+
+      cd /snap/kf6-core24/current/usr/lib
+      find . -type f,l -exec rm -f $CRAFT_PRIME/usr/lib/{} \;
+      cd /snap/kf6-core24/current/usr/share
+      find . -type f,l -exec rm -f $CRAFT_PRIME/usr/share/{} \;
