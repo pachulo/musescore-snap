@@ -71,6 +71,7 @@ parts:
       - libxkbcommon-dev
       - libduktape207
       - libportmidi-dev
+      - xxd
     override-build: |
       craftctl default
       sed -i 's|Icon=mscore|Icon=${SNAP}/usr/share/icons/hicolor/512x512/apps/mscore.png|' $CRAFT_PART_INSTALL/usr/share/applications/org.musescore.MuseScore.desktop
